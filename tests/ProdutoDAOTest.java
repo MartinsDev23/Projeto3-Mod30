@@ -40,6 +40,7 @@ public class ProdutoDAOTest {
         produto.setCodigo(codigo);
         produto.setDescricao("Produto 1");
         produto.setNome("Produto 1");
+        produto.setCondicao("Novo");
         produto.setValor(BigDecimal.TEN);
         produtoDao.cadastrar(produto);
         return produto;

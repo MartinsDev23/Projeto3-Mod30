@@ -21,7 +21,7 @@ public class VendaDAO extends GenericDAO<Venda, String> implements IVendaDAO {
     }
 
     @Override
-    public void atualiarDados(Venda entity, Venda entityCadastrado) {
+    public void atualizarDados(Venda entity, Venda entityCadastrado) {
         entityCadastrado.setCodigo(entity.getCodigo());
         entityCadastrado.setStatus(entity.getStatus());
     }
@@ -157,7 +157,7 @@ public class VendaDAO extends GenericDAO<Venda, String> implements IVendaDAO {
         try {
             StringBuilder sbProd = new StringBuilder();
             sbProd.append("SELECT PQ.ID, PQ.QUANTIDADE, PQ.VALOR_TOTAL, ");
-            sbProd.append("P.ID AS ID_PRODUTO, P.CODIGO, P.NOME, P.DESCRICAO, P.VALOR ");
+            sbProd.append("P.ID AS ID_PRODUTO, P.CODIGO, P.NOME, P.DESCRICAO, P.CONDICAO, P.VALOR ");
             sbProd.append("FROM TB_PRODUTO_QUANTIDADE PQ ");
             sbProd.append("INNER JOIN TB_PRODUTO P ON P.ID = PQ.ID_PRODUTO_FK ");
             sbProd.append("WHERE PQ.ID_VENDA_FK = ?");

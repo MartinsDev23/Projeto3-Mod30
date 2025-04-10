@@ -13,6 +13,7 @@ public class ProdutoFactory {
         prod.setCodigo(rs.getString("CODIGO"));
         prod.setNome(rs.getString("NOME"));
         prod.setDescricao(rs.getString("DESCRICAO"));
+        prod.setCondicao(rs.getString("CONDICAO"));
         prod.setValor(rs.getBigDecimal("VALOR"));
         return prod;
     }
